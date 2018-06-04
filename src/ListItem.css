@@ -1,0 +1,27 @@
+.ListItem-li {
+  border: 1px solid #888;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ListItem-main {
+  display: flex;
+  margin-top: 1px;
+}
+
+.ListItem-cb {
+  margin-right: 10px;
+}
+
+.ListItem-btn {
+  cursor: pointer;
+  align-self: flex-end;
+  border: 1px solid #d4686d;
+  color: #d4686d;
+  border-radius: 3px;
+  height: 25px;
+}

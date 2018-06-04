@@ -1,0 +1,62 @@
+.ToggleSlider {
+  height: 26px;
+  box-sizing: border-box;
+  align-items: center;
+  display: flex;
+	position: relative;
+	user-select: none;
+}
+
+.ToggleSlider-cb {
+	margin: 10px 0 0 20px;
+	opacity: 0;
+	position: absolute;
+	z-index: -1;
+}
+.ToggleSlider-cb + label {
+	cursor: pointer;
+	padding: 0 0 0 60px;
+	/* position: relative; */
+}
+.ToggleSlider-cb + label:before {
+	background: #CDD1DA;
+	border-radius: 13px;
+	box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+	content: '';
+	height: 26px;
+	left: 0;
+	position: absolute;
+	top: 0px;
+	transition: .2s;
+	width: 50px;
+}
+.ToggleSlider-cb + label:after {
+	background: #FFF;
+	border-radius: 10px;
+	box-shadow: 0 2px 5px rgba(0,0,0,.3);
+	content: '';
+	height: 22px;
+	left: 2px;
+	position: absolute;
+	top: 2px;
+	transition: .2s;
+	width: 22px;
+}
+.ToggleSlider-cb:checked + label:before {
+	background: #9FD468;
+}
+.ToggleSlider-cb:checked + label:after {
+	left: 26px;
+}
+.ToggleSlider-cb:focus + label:before {
+  /* 	box-shadow: inset 0 2px 3px rgba(0,0,0,.2), 0 0 0 3px rgba(255,255,0,.7); */
+}
+
+.ToggleSlider-text {
+  /*
+    This should NOT be set here, but I didn't want to waste my learning time
+    coming up with a better solution
+  */
+  display: inline-block;
+  width: 140px;
+}
