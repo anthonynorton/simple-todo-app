@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Header';
 import ToggleSlider from './ToggleSlider';
 import List from './List';
+import ListItem from './ListItem';
 
 class App extends Component {
   constructor(props) {
@@ -72,6 +73,12 @@ class App extends Component {
     })
   }
 
+  getListItems(list) {
+    return list.map(li => {
+      return <ListItem toggle={this.toggleTodo} remove={this.removeTodo} key={li.id} info={li} />
+    });
+  }
+
   toggleSignInDUMMYAUTH = () => {
     this.setState({ authenticated: !this.state.authenticated });
     console.log('Clicked toggleSignInDUMMYAUTH');
@@ -90,7 +97,7 @@ class App extends Component {
             <h1>List Items</h1>
             <ToggleSlider id="hideCompleted" toggle={this.toggleFilterCompleted} isChecked={ this.state.filterCompleted } onText={"Hiding Completed"} offText={"Showing All"}/>
           </div>
-          <List toggleTodo={ this.toggleTodo } removeTodo={ this.removeTodo } list={this.getTodos(this.state.filterCompleted) } />
+          <List children={ this.getListItems(this.state.todos) } />
         </section>
       </div>
     )
