@@ -1,0 +1,52 @@
+:root {
+  --add-plus-width: 26px;
+  --add-plus-height: 4px;
+  --add-plus-margin-offset: -2px;
+  --add-plus-top-or-left-offset: 27px;
+}
+
+.TodoCreator {
+  display: flex;
+}
+
+.TodoCreator-add {
+  border: 1px solid #888;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.TodoCreator-add::before, .TodoCreator-add::after{
+  content: '';
+  position: absolute;
+  background-color: #9FD468;
+}
+
+.TodoCreator-add::before {
+  width: var(--add-plus-height);
+  height: var(--add-plus-width);
+  top: var(--add-plus-top-or-left-offset);
+  left: 50%;
+  margin-left:  var(--add-plus-margin-offset);
+  margin-top: -50%;
+}
+
+.TodoCreator-add::after {
+  height: var(--add-plus-height);
+  width: var(--add-plus-width);
+
+  top: 50%;
+  left: var(--add-plus-top-or-left-offset);
+  margin-left: -50%;
+  margin-top: var(--add-plus-margin-offset);
+}
+
+.TodoCreator-title-input {
+  border-radius: 5px;
+  border: 1px solid #888;
+  padding-left: 10px;
+  font-size: 1rem;
+}
